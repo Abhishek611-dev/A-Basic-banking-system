@@ -1,0 +1,76 @@
+{% extends 'banking/basic.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block css %}
+
+h1{
+  animation:type 4s steps(37);
+  overflow:hidden;
+  white-space:nowrap;
+  font-family:consolas;
+  border-right:4px solid red;
+  width:100%;
+  margin-left:50px;
+}
+
+@keyframes type{
+  0%{
+    width:0ch;
+  }
+  100%{
+    width:30ch;
+  }
+}
+h2{color:rgb(0, 0, 0);
+font-family:Bebas Neue;
+font-size:30px;
+margin-top:150px;
+margin-left:60px;
+
+}
+#button{
+  background-color:rgb(235, 63, 192);
+  color:white;
+  border-radius:5px;
+  border-color:white;
+  margin:40px;
+  width:150px;
+  margin-left:50px;
+
+}
+#button:hover{
+  background-color:rgb(63, 97, 235);
+}
+
+
+{% endblock %}
+
+
+
+{% block body %}
+<br>
+<div class="container">
+<div class="row">
+  <div class="col-sm-6 col-xs-12">
+    <img src="{% static 'images/1.png' %}" alt="">
+  </div>
+  <div class="col-sm-6 col-xs-12">
+  
+  <br><br>
+
+
+
+
+ <h2><b>Fastest Way To Send Money Worldwide.</b></h2>
+
+
+<a href="{%url 'transfer'%}" id="button" class="btn btn-primary">Transfer Money</a>
+<a href="{% url 'insert_data' %}" id="button" class="btn btn-primary">Register</a>
+
+  </div>
+</div>
+</div>
+
+
+{% endblock %}

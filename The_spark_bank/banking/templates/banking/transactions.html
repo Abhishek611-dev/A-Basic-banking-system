@@ -1,0 +1,91 @@
+{% extends 'banking/basic.html' %}
+{% load static %}
+{% block title %}Transaction History{% endblock %}
+{% block css %}
+
+table, th, td {
+  margin-top:2%;
+  border: 1px solid white;
+  padding:1%;
+  text-align:centre;
+  border-radius:2%;
+  border: 2px solid gray;
+  border-radius: 5px;
+  margin-botton:2%;
+
+}
+th{
+  color:#85e085;
+}
+td{
+  color:white;
+}
+
+td:hover{
+  color:black;
+  background-color:white;
+
+}
+
+
+h1{
+   padding-top:50px;
+   font-family: 'Anton', cursive;
+   color:#ff8c66;
+   font-size:30px;
+   margin-left:45px;
+   margin-top:20px;
+}
+
+
+body{
+  background: black;
+
+}
+table{
+  border-radius: 10px;
+  margin-bottom:50px;
+}
+
+img{
+  padding-top:5%;
+}
+
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+<div class="row">
+
+<div class="col-md-6">
+  <img src="{% static 'images/transactionhistory.jpg' %}" alt="">
+
+</div>
+
+<div class="col-md-6">
+<h1>Transaction Details</h1>
+  <table style="width:110%">
+    <tr>
+      <th>Date</th>
+      <th>Sender's Email</th>
+      <th>Receiver's Email</th>
+      <th>Amount</th>
+    </tr>
+    {% for data in history %}
+    <tr>
+      <td>{{data.date}}</td>
+      <td>{{data.sender}}</td>
+      <td>{{data.receiver}}</td>
+      <td>{{data.amt}}</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+</div>
+
+</div>
+</div>
+
+{% endblock %}

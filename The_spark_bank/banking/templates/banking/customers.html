@@ -1,0 +1,94 @@
+{% extends 'banking/basic.html' %}
+{% load static %}
+{% block title %}Customers{% endblock %}
+{% block css %}
+
+body{
+  background-color:#000000;
+}
+
+
+
+table, th, td {
+  margin-top:2%;
+  border: 1px solid white;
+  padding:1%;
+  text-align:centre;
+  border-radius:5px;
+  border: 2px solid gray;
+ border-radius: 5px;
+
+}
+
+img{
+  padding-top:10%;
+  width:50%;
+}
+
+
+th{
+  color:#85e085;
+}
+td{
+  color:white;
+}
+
+
+h1{
+  padding-top:12px;
+   font-family: 'Anton', cursive;
+   color:#ffcb9a;
+}
+
+
+
+td:hover{
+  color:black;
+  background-color:white;
+
+}
+
+{% endblock %}
+{% block body %}
+
+
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-6">
+  <h1>Customer Details</h1>
+  <table style="width:90%">
+    <tr>
+      <th>Name</th>
+      <th>Email ID</th>
+      <th>Balance(Rs.)</th>
+      <th>Bank ID</th>
+    </tr>
+
+    {% for i in stu %}
+
+    <tr>
+      <td>{{i.name}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.balance}}</td>
+      <td>{{i.bank_id}}</td>
+    </tr>
+
+    {% endfor %}
+
+  </table>
+
+</div>
+
+<div class="col-md-6">
+  <img src="{% static 'images/customers.svg' %}" alt="">
+</div>
+
+</div>
+
+</div>
+
+
+{% endblock %}
